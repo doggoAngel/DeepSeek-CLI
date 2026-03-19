@@ -15,6 +15,10 @@ VIDEO
 2. Simple CLI  
 3. Python library  
 
+## TO DO on library
+
+- [ ] API call to upload files
+
 ## 1. Reverse Engineering
 
 First, I set up Burp Suite and my browser to inspect all traffic sent to the server. I noticed that every request includes a custom header: `X-Ds-Pow-Response`, which contains a JSON object encoded in base64:
@@ -181,3 +185,6 @@ After that, it checks if the computed hash equals the hash provided by the serve
 ![alt text](pic/SCR-20260319-nbvy.png)
 
 With this knowledge, I replicated the logic in a Python script and also created a library for your automation.
+
+
+## 

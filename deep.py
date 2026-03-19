@@ -1,9 +1,8 @@
-from api import connection
+from src import api as ap
 import sys
 
-
 if __name__ == "__main__":
-    api = connection()
+    api = ap.connection()
 
     print("DEEPSEEK CLI")
     print("/help")
@@ -35,20 +34,19 @@ if __name__ == "__main__":
                     api.newChat()
                 
             
-            elif(text == "/newchat"):
+            elif(text == "/newchat" and status):
                 api.newChat()
                 msgId = None
-                
-
-            elif(text == "/history"):
-                api.getHistory(api.idChat)
+                print('\033[2J')
+                print("/help")
                 
             else:
-                print(api.send(text,msgId))
-                if(msgId is None):
-                    msgId = 2
-                    continue
-                msgId += 2
+                if(status):
+                    print(api.send(text,msgId))
+                    if(msgId is None):
+                        msgId = 2
+                        continue
+                    msgId += 2
 
         except KeyboardInterrupt:
             sys.exit(0)

@@ -1,6 +1,6 @@
 import requests
 import json
-from crack import antibot
+from .crack import antibot
 import base64
 
 class connection:
@@ -81,12 +81,7 @@ class connection:
         except FileNotFoundError:
             return False
 
-    #get history chat by ID
-    def getHistory(self, Id:str):
-        req = requests.get(url=self.domain + self.endpoints["history"] +"?chat_session_id="+Id, headers=self.headers, proxies={"https":"http://127.0.0.1:8080"}, verify=False)
-        
-        
-        
+    
 
     #get challenge anti bot
     def challenge(self, target)-> str:
