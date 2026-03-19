@@ -17,7 +17,7 @@ VIDEO
 
 ## TO DO on library
 
-    - [ ] API call to upload files
+- [ ] API call to upload files
 
 ## 1. Reverse Engineering
 
