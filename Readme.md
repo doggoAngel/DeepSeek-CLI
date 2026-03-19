@@ -126,3 +126,64 @@ To decompilate and analisys a file wasm in Ghidra, we need to install this plugi
 After installing ghidra is able to decompilate the file WASM.
 
 ![alt text](pic/SCR-20260319-kpax.png)
+
+The alghoritm used is SHA3-256 modificated do 23 rounds instead 24 rouds.
+
+The Flow of calculation the anwer is a for loop from 0 to difficulty number, inside the for loop there is a function that calculate the hash of this string:
+
+```text
+<salt value> + "_" + <expire at value> + "_" + <N loop>
+```
+example: 
+
+```text
+"8c7c7d75efa43eb22d2a_1773855887108_1"
+"8c7c7d75efa43eb22d2a_1773855887108_2"
+"8c7c7d75efa43eb22d2a_1773855887108_3"
+.....
+```
+For each strings create an HASH and confront with the HASH give the server, if are same the anwaer is the number of cicles.
+
+### How to recognize the SHA3-256
+
+SHA3 works with a buffer of 200 bytes, look at this pic:
+
+![alt text](pic/SCR-20260319-kzya.png)
+
+If there is a buffer of 200 bytes inizializated with 0 and used wiht XOR it is mean is KECCAK/SHA3.
+
+Go ahead, we can see an if condiction that check if the concateion string id less of 0x88, this 0x88 is 136 bytes in decimal and rappresent the size of block of SHA3-256.
+
+Table of size block and its version of SHA:
+
+```text
+    Rate | Algh
+    136  | SHA3-256
+    144  | SHA3-224
+    104  | SHA3-384
+    72   | SHA3-512
+```
+The 6 byte such as padding, this mean is a SHA3 standard.
+
+![alt text](pic/SCR-20260319-mmky.png)
+
+After the message, write a byte: 0x06. This byte is the domain separetion byte of SHA2 NIST. If was keccak standart: 0x01, if SHAKE: 0x1F.
+
+After, does 17 XOR da 8 bytes:
+
+![alt text](pic/SCR-20260319-mwvo.png)
+
+
+At the least byte of block is xor with 0x80 and this is the second byte of domain separetion byte.
+
+![alt text](pic/SCR-20260319-mtfo.png)
+
+After, write 0x80 at least block. It calls a function maybe keccak-f as argoment the address of blocks. That there are 23 rounds.
+
+![alt text](pic/SCR-20260319-myzc.png)
+
+After that check if the hash calculated is egual of hash give from server.
+For each block from 0x00 to 0x1F-> 32 byte= 256 bits.
+
+![alt text](pic/SCR-20260319-nbvy.png)
+
