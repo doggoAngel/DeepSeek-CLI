@@ -1,10 +1,9 @@
+# DeepSeek CLI
 
-# x CLI
+This is a CLI that uses the web chat API of Deepseek.  
+That means you can create your own custom projects with the Deepseek model without purchasing API tokens.
 
-This is a CLI that uses the web chat API of x.  
-That means you can create your own custom projects with the x model without purchasing API tokens.
-
-To prevent this, x developers implemented a security layer — a hash challenge required for all API calls.  
+To prevent this, Deepseek developers implemented a security layer — a hash challenge required for all API calls.  
 I reverse engineered this challenge and also created a Python library for it.
 
 Check the video demo:  
@@ -82,10 +81,10 @@ I searched in the main file for those two IDs and `n.u`, and found:
 - Key `38401` → Value `"a8c4129551"`
 
 I also found `n.p` which contains a link:  
-`https://fe-static.x.com/chat`
+`https://fe-static.deepseek.com/chat`
 
 The final URL for ID `33614` is:  
-`https://fe-static.x.com/chat/static/33614.1ba98674d4.js`
+`https://fe-static.deepseek.com/chat/static/33614.1ba98674d4.js`
 
 ### Analysis of the 33614 JavaScript
 
