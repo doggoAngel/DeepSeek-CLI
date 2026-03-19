@@ -20,7 +20,7 @@ VIDEO
 
 First thing i did, setup my burpsuite and the browser to see all traffic that send to the server. And i see that all request have a custom Header called: X-Ds-Pow-Response that contians a json encode in base64:
 
-![alt text](../foto-readme/SCR-20260319-jiwx.png)
+![alt text](pic/SCR-20260319-jiwx.png)
 
 ```json
 {
@@ -42,7 +42,7 @@ This json contains:
 
 To take that challenge, the client need to do a call to: POST /api/v0/chat/create_pow_challenge before all api calls, in side the body there is a json with: target_path that contians the path of the second call.
 
-![alt text](../foto-readme/SCR-20260319-jote.png)
+![alt text](pic/SCR-20260319-jote.png)
 
 To resolve this challenge the alghoritm need these (this information i know after the analisys of main.js and wasm compilate):
 
@@ -104,7 +104,7 @@ The variable e contain the json (HASH, salt, expire_at ....)
 Inside the onmessage, there is a concatenation of string:
 
 ```text
-    <salt value> + "_" + <expire at value> + "_"
+<salt value> + "_" + <expire at value> + "_"
 ```
 That is start of string hash to calculate, piu' avanti.
 
@@ -112,9 +112,17 @@ after the concatenation, the js call a functon saved into a WASM file, this wasm
 That function is called: 
 
 ```javascript
-    n.wasm_solve(<base address>, <start hash address>, <lengh of hash>, <start concatention adress>, <lenght of concatenation>, <difficulty>)
+n.wasm_solve(<base address>, <start hash address>, <lengh of hash>, <start concatention adress>, <lenght of concatenation>, <difficulty>)
 ```
 
 So, i donwload the file wasm.
 
 ### Analisys of WASM file
+
+To decompilate and analisys a file wasm in Ghidra, we need to install this plugin.zip in releases: 
+
+    https://github.com/nneonneo/ghidra-wasm-plugin
+
+After installing ghidra is able to decompilate the file WASM.
+
+![alt text](pic/SCR-20260319-kpax.png)
