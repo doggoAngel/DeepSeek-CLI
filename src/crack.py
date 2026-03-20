@@ -1,8 +1,3 @@
-"""
-DeepSeekHashV1 = SHA3-256 con Keccak-f[1600] a 23 round (salta round 0).
-Rate=136, output=32 byte, padding=0x06 (SHA-3 NIST standard).
-L'unica differenza da SHA3-256: la permutazione parte dal round 1 invece che dal round 0.
-"""
 
 class antibot:
 
@@ -92,20 +87,3 @@ class antibot:
                 return i
 
 
-"""# --- Solve ---
-defficult = 20 #144000
-salt = "17738b0f3ba7f708b8a2"
-expire = 1773608037291
-target = "b2cf746eb1e9669b6e3e49b2b9f1b5fdacd177cdc8553067f29c702b0524dc0d"
-
-"""
-
-
-
-
-'''
-{"code":0,"msg":"","data":{"biz_code":0,"biz_msg":"","biz_data":{"challenge":{"algorithm":"DeepkHashV1","challenge":"38c282a8dfab4b018b6c2466b600f572a4caa68367e8ff05db40779f6f329f3b","salt":"404e9b1b931574575ab7","signature":"38439763bdd41bc5106906a5abec6bf2b12dfd33a9e194b1a44d160c2f80c1f6","difficulty":144000,"expire_at":1772967221890,"expire_after":300000,"target_path":"/api/v0/chat/completion"}}}}
-
-risposta:
-{"algorithm":"DeepSeekHashV1","challenge":"38c282a8dfab4b018b6c2466b600f572a4caa68367e8ff05db40779f6f329f3b","salt":"404e9b1b931574575ab7","answer":55317,"signature":"38439763bdd41bc5106906a5abec6bf2b12dfd33a9e194b1a44d160c2f80c1f6","target_path":"/api/v0/chat/completion"}
-'''
