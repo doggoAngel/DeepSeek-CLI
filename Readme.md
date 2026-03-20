@@ -8,7 +8,7 @@ I reverse engineered this challenge and also created a Python library for it.
 
 Check the video demo:  
 
-![alt text](pic/Registrazione%20schermo%202026-03-20%20alle%2010.09.25.mov)
+pic/Registrazione%20schermo%202026-03-20%20alle%2010.09.25.mov
 
 ## Topics
 1. Reverse Engineering  
