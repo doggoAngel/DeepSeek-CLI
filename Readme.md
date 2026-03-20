@@ -8,7 +8,7 @@ I reverse engineered this challenge and also created a Python library for it.
 
 Check the video demo:  
 
-[](pic/Registrazione%20schermo%202026-03-20%20alle%2010.09.25.mov)
+<video src="pic/demo.mov" controls width="600"></video>
 
 ## Topics
 1. Reverse Engineering  
