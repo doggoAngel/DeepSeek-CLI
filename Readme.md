@@ -22,8 +22,7 @@ https://github.com/user-attachments/assets/6d210cbb-f6e5-4297-9f20-119db8d09224
 
 ## Topics
 1. [Reverse Engineering](#reverse-engineering)
-2. [Simple CLI](#simple-cli)
-3. [Python library](#python-library)  
+2. [Python library](#python-library)  
 
 
 
@@ -193,9 +192,17 @@ After that, it checks if the computed hash equals the hash provided by the serve
 ![alt text](pic/SCR-20260319-nbvy.png)
 
 
-## Simple CLI  
+## Python Library 
 
 With this knowledge, I replicated the logic in a Python script and also created a library for your automation.
+These are all the methods of the api.connection class:
 
+```python
+login(email, password)       # Creates a .setting file that saves the session token
+newChat()                    # Creates a new chat
+islogged()                   # Checks if you are logged in
+challenge(target)            # Fetches the challenge from the server; the target argument is the path of the API call you want to make
+extractText(resp)            # Extracts the response text
+send(msg)                    # Sends a message to DeepSeek
+```
 
-## 
