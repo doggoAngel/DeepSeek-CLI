@@ -195,6 +195,8 @@ After that, it checks if the computed hash equals the hash provided by the serve
 ## Python Library 
 
 With this knowledge, I replicated the logic in a Python script and also created a library for your automation.
+The library is in the src directory.
+
 These are all the methods of the api.connection class:
 
 ```python
