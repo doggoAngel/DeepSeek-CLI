@@ -197,6 +197,8 @@ After that, it checks if the computed hash equals the hash provided by the serve
 With this knowledge, I replicated the logic in a Python script and also created a library for your automation.
 The library is in the src directory.
 
+### Methods
+
 These are all the methods of the api.connection class:
 
 ```python
@@ -208,3 +210,22 @@ extractText(resp)            # Extracts the response text
 send(msg)                    # Sends a message to DeepSeek
 ```
 
+### Endpoints
+
+The endpoints available through the library are stored in:
+
+    api.connection().endpoints
+
+This is a directory with the following kyes and paths:
+
+```json
+{
+    "login":"/api/v0/users/login",
+    "challenge":"/api/v0/chat/create_pow_challenge",
+    "newChat":"/api/v0/chat_session/create",
+    "send":"/api/v0/chat/completion",
+    "history":"/api/v0/chat/history_messages", #?chat_session_id=   ID chat
+    "user":"/api/v0/users/current"
+}
+```
+> **Note:** Currently, there is no endpoint available for file uploads.
