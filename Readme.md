@@ -14,16 +14,20 @@ https://github.com/user-attachments/assets/6d210cbb-f6e5-4297-9f20-119db8d09224
 
 
 
-## Topics
-1. Reverse Engineering  
-2. Simple CLI  
-3. Python library  
 
 ## TO DO on library
 
 - [ ] API call to upload files
 
-## 1. Reverse Engineering
+
+## Topics
+1. [Reverse Engineering](#reverse-engineering)
+2. [Simple CLI](#simple-cli)
+3. [Python library](#python-library)  
+
+
+
+## Reverse Engineering
 
 First, I set up Burp Suite and my browser to inspect all traffic sent to the server. I noticed that every request includes a custom header: `X-Ds-Pow-Response`, which contains a JSON object encoded in base64:
 
@@ -187,6 +191,9 @@ Then it writes `0x80` at the last block and calls a function (likely keccak-f) w
 After that, it checks if the computed hash equals the hash provided by the server. It compares each byte from `0x00` to `0x1F` (32 bytes = 256 bits).
 
 ![alt text](pic/SCR-20260319-nbvy.png)
+
+
+## Simple CLI  
 
 With this knowledge, I replicated the logic in a Python script and also created a library for your automation.
 
