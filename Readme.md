@@ -12,6 +12,8 @@ Check the video demo:
 
 [video](pic/demo.mp4)
 
+pic/demo.mp4
+
 ## Topics
 1. Reverse Engineering  
 2. Simple CLI  
