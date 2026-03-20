@@ -8,7 +8,9 @@ I reverse engineered this challenge and also created a Python library for it.
 
 Check the video demo:  
 
-<video src="pic/demo.mov" controls width="600"></video>
+<video src="pic/demo.mp4" controls width="600"></video>
+
+[video](pic/demo.mp4)
 
 ## Topics
 1. Reverse Engineering  
