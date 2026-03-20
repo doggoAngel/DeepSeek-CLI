@@ -8,11 +8,11 @@ I reverse engineered this challenge and also created a Python library for it.
 
 Check the video demo:  
 
-<video src="pic/demo.mp4" controls width="600"></video>
 
-[video](pic/demo.mp4)
 
-pic/demo.mp4
+https://github.com/user-attachments/assets/6d210cbb-f6e5-4297-9f20-119db8d09224
+
+
 
 ## Topics
 1. Reverse Engineering  
