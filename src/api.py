@@ -13,7 +13,7 @@ class connection:
             "challenge":"/api/v0/chat/create_pow_challenge",
             "newChat":"/api/v0/chat_session/create",
             "send":"/api/v0/chat/completion",
-            "history":"/api/v0/chat/history_messages", #?chat_session_id=   ID chat
+            "upload":"",
             "user":"/api/v0/users/current"
         }
         self.headers = {
@@ -135,7 +135,7 @@ class connection:
         
 
     # send msg into a chat ID
-    def send(self, message:str, msgId) -> str:
+    def send(self, message:str, msgId,thinking:bool,search:bool) -> str:
         self.headers["X-Ds-Pow-Response"] = self.challenge("send")
 
         payload = {
@@ -143,8 +143,8 @@ class connection:
             "parent_message_id":msgId,
             "prompt":message,
             "ref_file_ids":[],
-            "thinking_enabled":False,
-            "search_enabled":False,
+            "thinking_enabled":thinking,
+            "search_enabled":search,
             "preempt":False
         }
 
