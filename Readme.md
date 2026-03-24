@@ -17,7 +17,8 @@ https://github.com/user-attachments/assets/6d210cbb-f6e5-4297-9f20-119db8d09224
 
 ## TO DO on library
 
-- [ ] API call to upload files
+- [ ] API call to upload files.
+- [ ] Complete history API call.
 
 
 ## Topics
@@ -228,4 +229,4 @@ This is a directory with the following kyes and paths:
     "user":"/api/v0/users/current"
 }
 ```
-> **Note:** Currently, there is no endpoint available for file uploads.
+> **Note:** Currently, there is no endpoint available for file uploads and history is not complete.
